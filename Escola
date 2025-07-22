@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Escola {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        System.out.println("você é aluno ou professor? ");
+        String esc = ler.nextLine();
+
+        if(esc.equalsIgnoreCase("aluno")){
+            Aluno a = new Aluno();
+        } if (esc.equalsIgnoreCase("professor")) {
+            Professor p = new Professor();
+        } else {
+            System.out.println("Não foi possível concluir o login.");
+        }
+
+    }
+}
