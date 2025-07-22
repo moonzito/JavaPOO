@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class Professor {
+    public static void main(String[] args) {
+        Scanner ler = new Scanner(System.in);
+        System.out.print("Qual o usuário? ");
+        String usu = ler.nextLine();
+
+        System.out.print("Qual a senha? ");
+        String senha = ler.nextLine();
+
+        if(usu.equalsIgnoreCase("admin") && senha.equalsIgnoreCase("admin")){
+            System.out.println("Bem-vindo, professor!");
+            System.out.println("O que deseja fazer? 1- Ver turmas, 2- Ver Aluno, 3- Sair");
+            String busca = ler.nextLine();
+
+            switch (busca){
+                case "Ver turmas":
+                    String turmas[] = {"6A","6B","7A","7B","8A","8B","9A","9B"};
+                    System.out.println("Qual turma você deseja ver? ");
+                    String turma = ler.nextLine();
+
+                    boolean turmaEncontrada = false;
+                    for(int i=0; i<turmas.length; i++){
+                        if(turmas[i].equalsIgnoreCase(turma)){
+                            turmaEncontrada = true;
+                            break;
+                        }
+                    }
+
+                    if(turmaEncontrada){
+                        System.out.format("A turma %s foi encontrada.",turma);
+                    } else{
+                        System.out.format("A turma %s não foi encontrada.",turma);
+                    }
+
+                    break;
+
+                case "Ver alunos":
+                    String alunos[] = {"Ana","Bruna","Carlos","Daniel","Eloá","Fernanda","Gabriel","Henrique",
+                    "Iara","Joana","Kaleb","Leonardo","Maria","Nayara","Olímpio","Pedro","Quésia","Rayra",
+                    "Sávio","Tiago","U","Vanessa","Windersson","Xavi","Yasmin","Zoraya"};
+
+                    System.out.println("Qual aluno você quer ver o cadastro? ");
+                    String aluno = ler.nextLine();
+
+                    boolean alunoEncontrado = false;
+                    for(int i=0;i<alunos.length;i++){
+                        if(alunos[i].equalsIgnoreCase(aluno)){
+                            alunoEncontrado = true;
+                        }
+                    }
+
+                    if(alunoEncontrado){
+                        System.out.format("O aluno(a) %s foi encontrado nos registros",aluno);
+                    } else{
+                        System.out.format("O aluno(a) %s não foi encontrado nos registros",aluno);
+                    }
+
+                    break;
+
+                case "Sair":
+                    System.out.println("OK.");
+                    break;
+
+                default:
+                    System.out.println("Resposta não esperada.");
+                    break;
+            }
+
+        } else{
+            System.out.println("Usuário ou senha incorretos.");
+        }
+    }
+}
