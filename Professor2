@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Professor2 {
+    private String usuario;
+    private String senha;
+
+    //Cria um professor
+    public Professor2(String usuario, String senha){
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+
+    //Método para verificar as credenciais
+    public boolean autenticar(String usuDigitado, String senhaDigitada){
+        return this.usuario.equalsIgnoreCase(usuDigitado) && this.senha.equalsIgnoreCase(senhaDigitada);
+    }
+
+    public void exibirMenuProfessor(Scanner ler){
+        System.out.println("Bem-vindo, professor!");
+    }
+}
