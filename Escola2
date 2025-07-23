@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Escola2 {
+    public static void main(String[] args){
+        Scanner ler = new Scanner(System.in);
+
+        //Cria uma instância de Professor com as credenciais
+        Professor2 professorAdmin = new Professor2("admin", "admin");
+
+        System.out.print("Você é aluno ou professor? ");
+        String esc = ler.nextLine();
+
+        if(esc.equalsIgnoreCase("aluno")){
+            System.out.print("Em construção.");
+        } else if (esc.equalsIgnoreCase("professor")) {
+            System.out.print("Qual o usuário? ");
+            String usu = ler.nextLine();
+
+            System.out.print("Qual a senha? ");
+            String senha = ler.nextLine();
+            
+            if(professorAdmin.autenticar(usu,senha)){
+                professorAdmin.exibirMenuProfessor(ler);
+            } else {
+                System.out.println("Usuário ou senha incorretos.");
+            }
+        } else {
+            System.out.println("Não foi possível concluir o login.");
+        }
+        
+        ler.close();
+    }
+}
