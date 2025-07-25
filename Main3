@@ -1,0 +1,9 @@
+public class Main3 {
+    public static void main(String[] args) {
+        Playstation p = new Playstation();
+        p.ligado();
+        p.setNome("carlozera");
+        p.setJogo("The Last of US II");
+        p.statusP();
+    }
+}
