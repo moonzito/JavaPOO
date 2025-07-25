@@ -1,0 +1,47 @@
+public class Playstation {
+    private String verPs4;
+    private boolean ligado;
+    public String nomeUsu;
+    public String jogoSelec;
+
+    void ligado(){
+        this.ligado = true;
+    }
+
+    void desligado(){
+        this.ligado = false;
+    }
+
+   private String getVersao(){
+        return this.verPs4;
+   }
+
+   private void setVersao(String vP){
+        this.verPs4 = vP;
+   }
+
+   public String getJogo(){
+        return this.jogoSelec;
+   }
+
+   public void setJogo(String jogo){
+        this.jogoSelec = jogo;
+    }
+
+   public String getNome(){
+        return this.nomeUsu;
+   }
+
+   public void setNome(String nm){
+        this.nomeUsu = nm;
+   }
+
+   public void statusP(){
+        if (this.ligado){
+            System.out.printf("Olá, %s está online jogando %s? Que jogo legal",this.getNome(),this.getJogo());
+        } else{
+            System.out.println("Estou desligado");
+        }
+   }
+
+}
