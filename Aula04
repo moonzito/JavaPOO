@@ -1,0 +1,6 @@
+public class aula04 {
+    public static void main(String[] args) {
+        Caneta2 c1 = new Caneta2("Sla",3.14159F,"azul berinjela");
+        c1.status();
+    }
+}
