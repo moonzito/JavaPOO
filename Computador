@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Computador {
+    String Usu;
+    String Sen;
+    String App;
+    boolean Ligado;
+    boolean EntNoApp;
+    boolean LgnNConc;
+
+    public boolean Ligar(){
+        return this.Ligado = true;
+    }
+
+    public boolean Desligar(){
+        return this.Ligado = false;
+    }
+
+    public String Usuario(String Usu){
+        return this.Usu;
+    }
+
+    public String Senha(String Sen){
+        return this.Sen;
+    }
+
+    public void LogarNaConta(String Usu, String Sen){
+        if(Usu.equalsIgnoreCase("admin") && Sen.equalsIgnoreCase("admin")){
+            System.out.printf("Bem-vindo, %s!\n",Usu);
+        } else{
+            System.out.println("usuário e/ou senha incorretos! \nTente novamente.");
+            Scanner ler = new Scanner(System.in);
+
+            for(int Contador=0; Contador<4; Contador++){
+                System.out.print("Digite seu o usuário novamente: ");
+                String Usu2 = ler.nextLine();
+
+                System.out.println("Digite a senha novamente: ");
+                String Sen2 = ler.nextLine();
+                
+                if(Usu2.equalsIgnoreCase("admin") && Sen2.equalsIgnoreCase("admin")){
+                    System.out.println("Login realizado!");
+                    break;
+                }
+
+            }
+
+        }
+    }
+
+    public String Aplicativo(String App){
+        return this.App;
+    }
+
+    public void EntrarNoAplicativo(){
+        System.out.printf("Entrando no %s",this.App);
+    }
+}
