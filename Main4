@@ -1,0 +1,12 @@
+public class Main4 {
+    public static void main(String[] args) {
+        PS4 play = new PS4();
+
+        play.Usuario = "Carlos";
+        play.Jogo = "GTA 5";
+        play.Desligar();
+        play.VerNome();
+        play.IniciarJogo();
+
+    }
+}
