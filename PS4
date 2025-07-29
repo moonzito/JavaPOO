@@ -1,0 +1,25 @@
+public class PS4 {
+    String Usuario;
+    String Jogo;
+    boolean ligado;
+
+    public boolean Ligar(){
+        return this.ligado = true;
+    }
+
+    public boolean Desligar(){
+        return this.ligado = false;
+    }
+
+    public void VerNome(){
+        System.out.printf("Bem-vindo, %s!\n",Usuario);
+    }
+
+    public void IniciarJogo(){
+        if(ligado){
+            System.out.printf("Estou jogando %s",Jogo);
+        } else{
+            System.out.print("Não posso jogar pois estou desligado.");
+        }
+    }
+}
