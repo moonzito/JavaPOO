@@ -1,0 +1,8 @@
+public class CanetaPOO {
+    public String modelo;
+    public String cor;
+    private float ponta = 0.5F;
+    protected float carga = 0.80F;
+    protected boolean tampada;
+
+}
