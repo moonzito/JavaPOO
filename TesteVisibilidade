@@ -1,0 +1,8 @@
+public class TesteVisibilidade {
+    public static void main(String[] args) {
+        CanetaPOO c1 = new CanetaPOO();
+        c1.modelo = "Big Cristal";
+        c1.cor = "Preto";
+        c1.tampada = false;
+    }
+}
