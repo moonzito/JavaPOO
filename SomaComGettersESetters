@@ -1,0 +1,9 @@
+public class SomaComGettersESetters {
+    public static void main(String[] args) {
+        Soma s = new Soma();
+
+        s.setA(12);
+        s.setB(2);
+        s.Soma();
+    }
+}
