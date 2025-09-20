@@ -1,0 +1,56 @@
+import static java.lang.Math.clamp;
+
+public class RPG {
+    public abstract class Personagem{
+        public String nome;
+        private Double vida;
+        private Double ataque;
+        private Double defesa;
+        private Double critChance;
+        private Double critMultiplier;
+        private Double armorPenetration;
+
+        public Personagem(String nome, Double vida, Double ataque, Double defesa,
+                          Double critChance, Double critMultiplier, Double armorPenetration){
+
+            this.nome = nome;
+            this.vida = vida;
+            this.ataque = ataque;
+            this.defesa = Math.max(0, defesa);
+            this.critChance = clamp(critChance, 0.0, 1.0);
+            this.critMultiplier = Math.max(1.0, critMultiplier);
+            this.armorPenetration = clamp(armorPenetration, 0.1, 1.0);
+        }
+
+        private Double clamp(double v, double a, double b){
+            return Math.max(a, Math.min(b, v));
+        }
+
+        public boolean estarvivo(){
+            return this.vida >0;
+        }
+
+        public void receberdano(double dano){
+            this.vida -= dano;
+            if (this.vida < 0) this.vida = (double) 0;
+        }
+
+        public String getNome(){return nome;}
+        public Double getvida(){return vida;}
+        public Double getataque(){return ataque;}
+        public Double getdefesa(){return defesa;}
+        public Double getcritChance(){return critChance;}
+        public Double getcritMultiplier(){return critMultiplier;}
+        public Double getarmorPenetration(){return armorPenetration;}
+
+        public AttackResult atacar(Personagem alvo){
+            return Combat.calculateAndApplyDamage(this, alvo, true);
+        }
+
+        public String toString(){
+            return String.format("%s (HP: %.1f, Atk: %.1f, Def: %.1f)", nome, vida, ataque, defesa);
+        }
+
+    }
+
+}
